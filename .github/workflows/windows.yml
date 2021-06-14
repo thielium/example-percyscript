@@ -13,4 +13,10 @@ jobs:
         with:
           command: "node snapshots.js"
         env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN_A }}
+      - name: Percy Test
+        uses: percy/exec-action@master
+        with:
+          command: "node snapshots.js"
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN_B }}
